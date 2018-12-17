@@ -7,6 +7,7 @@ gem 'devise'
 gem 'jquery-rails'
 gem 'twitter-bootstrap-rails'
 gem 'devise-bootstrap-views'
+gem 'font-awesome-rails'
 # Gem to get stock quotes using google api
 gem 'stock_quote'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
