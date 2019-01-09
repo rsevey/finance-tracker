@@ -6,7 +6,8 @@
 <% if @stock %>
     <div class="well results-block">
         <strong>Symbol: </strong><%= @stock.ticker %>
-        <strong>None: </strong><%= @stock.name %>
+        <strong>Name: </strong><%= @stock.name %>
+        <strong>eps: </strong><%= @stock.eps %>
         <strong>Price: </strong><%= @stock.last_price %>
         <% if current_user.can_add_stock?(@stock.ticker) %>      
             <%= link_to "Add to my stocks", user_stocks_path(user: current_user, stock_ticker: @stock.ticker), 
