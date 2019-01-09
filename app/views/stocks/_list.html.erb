@@ -2,24 +2,31 @@
   <table class="table table-bordered table-responsive">
     <thead>
     <tr>
-      <th class="col-xs-3">Ticker</th>
-      <th class="col-xs-1">Current Ask:</th>
-      <th class="col-xs-1">Earning Per Share</th>
-      <th class="col-xs-1">Price/Earning Ratio</th>
-      <th class="col-xs-1">Stock Open</th>
-      <th class="col-xs-1">View</th>
-      <th class="col-xs-1">Edit</th>
-      <th class="col-xs-1">Delete</th>
+      <th class="col-xs-3">Company Name:</th>
+      <th class="col-xs-1">Ticker:</th>
+      <th class="col-xs-1">Current Ask: </th>
+      <th class="col-xs-1">Market Cap: </th>
+      <th class="col-xs-1">PE Ratio: </th>
+      <th class="col-xs-1">Previous Close: </th>
+      <th class="col-xs-1">Day High: </th>
+      <th class="col-xs-1">Change: </th>
+      <th class="col-xs-1">View: </th>
+      <th class="col-xs-1">Edit: </th>
+      <th class="col-xs-1">Delete: </th>
     </tr>
     </thead>
 
-  <tbody>
-    <% @user_stocks.each do |user_stock| %>
+  <tbody>   
+    <% @user_stocks.each do |user_stock| %>    
       <tr>
         <td><%= user_stock.name %></td>
         <td><%= user_stock.ticker %></td>
         <td><%= user_stock.last_price %></td>
+        <td><%= number_to_currency(user_stock.mcap) %></td>
         <td><%= user_stock.pe %></td>
+        <td><%= user_stock.pclose %></td>
+        <td><%= user_stock.high %></td>
+        <td><%= user_stock.change %></td>
         <% if @user.id == current_user.id %>
         <td><%= link_to 'Edit', user_stock_path(user_stock), class: "glyphicon glyphicon-cog btn btn-xs btn-warning" %></td>
           <td><%= link_to "Delete this stock", user_stock_path(user_stock), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-xs btn-danger"  %>

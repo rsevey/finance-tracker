@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_09_014937) do
+ActiveRecord::Schema.define(version: 2019_01_09_175627) do
 
   create_table "stocks", force: :cascade do |t|
     t.string "ticker"
@@ -21,6 +21,9 @@ ActiveRecord::Schema.define(version: 2019_01_09_014937) do
     t.decimal "eps"
     t.decimal "pe"
     t.decimal "high"
+    t.decimal "mcap"
+    t.decimal "pclose"
+    t.decimal "change"
   end
 
   create_table "user_stocks", force: :cascade do |t|
