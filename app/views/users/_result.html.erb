@@ -7,8 +7,9 @@
     <div class="well results-block">
         <strong>Symbol: </strong><%= @stock.ticker %>
         <strong>Name: </strong><%= @stock.name %>
-        <strong>eps: </strong><%= @stock.eps %>
         <strong>Price: </strong><%= @stock.last_price %>
+        <strong>PE Ratio: </strong><%= @stock.pe %>
+        <strong>Day High: </strong><%= @stock.high %>
         <% if current_user.can_add_stock?(@stock.ticker) %>      
             <%= link_to "Add to my stocks", user_stocks_path(user: current_user, stock_ticker: @stock.ticker), 
                                                                     class: "btn btn-xs btn-success", method: :post %> 
